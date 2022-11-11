@@ -4,10 +4,15 @@ import com.example.Oblig_3.rest_api.dataClasses_and_models.Patient
 import com.example.Oblig_3.rest_api.dataClasses_and_models.Symptom
 import org.springframework.stereotype.Repository
 
+//definert som Repository
 @Repository
 class PatientSearchRepo {
+    // definerer mutableLists for alle pasienter, og for alle symptomer
+    // disse vil senere kunne hentes ut ifra Database
     final var mAllPatients = mutableListOf<Patient>()
     final var mAllSymptoms = mutableListOf<Symptom>()
+
+    // i init så legger fyller jeg listene med pasiennter, og symptomer, disse kan sees med å kjøre metodene i controller
 
     init {
         // Adding two patients just to get started
@@ -42,11 +47,13 @@ class PatientSearchRepo {
 
     //get all patients
     fun fetchAllPatients(): List<Patient>{
+        //return list
         return mAllPatients
     }
 
     // get single patient by id
     fun fetchPatientById(id: Int): Patient? {
+        //return list where the id of the patient is the same as argument in constructor
         return mAllPatients.find {
             it.id == id
         }
@@ -54,11 +61,13 @@ class PatientSearchRepo {
 
     // Get all Symptoms (must be moved)
     fun fetchAllSymptoms(): List<Symptom>{
+        //return list of all symptoms
         return mAllSymptoms
     }
 
     // Get one Symptom by id (must be moved)
     fun fetchSymptomById(id: Int): Symptom? {
+        // return list where id of the symptom is the same as id in constructor
         return mAllSymptoms.find {
             it.id == id
         }
