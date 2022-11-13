@@ -18,9 +18,13 @@ class PatientSearchRepo {
         // Adding two patients just to get started
         val p1 = Patient(1, "Ola", "Nordmann", 1)
         val p2 = Patient(2, "Kari", "Nordmann", 1)
+        val p3 = Patient(3, "Pasient", "Pasientsen", 2)
+        val p4 = Patient(4, "Test", "Testersen", 2)
 
         mAllPatients.add(p1)
         mAllPatients.add(p2)
+        mAllPatients.add(p3)
+        mAllPatients.add(p4)
 
         // Initializing all Symptoms
             // common symptoms
